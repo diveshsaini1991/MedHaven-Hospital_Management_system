@@ -50,6 +50,9 @@ const Messages = () => {
                   <p>
                     Message: <span>{element.message}</span>
                   </p>
+                  <p>
+                    To: <span>{element.to=="Admin"?"Admin":`Dr. ${element.doctor.firstName} ${element.doctor.lastName}`}</span>
+                  </p>
                 </div>
               </div>
             );

@@ -99,6 +99,16 @@ export const logoutPatient = catchAsyncErrors(async (req, res, next) => {
     });
 });
 
+export const logoutDoctor = catchAsyncErrors(async (req, res, next) => {
+    res.status(200).cookie("doctorToken", "", {
+        httpOnly: true,
+        expires: new Date(Date.now())
+    }).json({
+        success: true,
+        message: "Doctor Log Out Successfully !"
+    });
+});
+
 export const addNewDoctor = catchAsyncErrors(async (req, res, next) => {
     if (!req.files || Object.keys(req.files).length === 0) {
         return next(new ErrorHandler("Doctor Avatar Required!", 400));
