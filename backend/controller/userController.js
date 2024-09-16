@@ -16,7 +16,7 @@ export const patientRegister = catchAsyncErrors(async (req, res, next) => {
     user = await User.create({ firstName, lastName, email, phone, password, gender, dob, aadhaar, role });
     generateToken(user, "User Registered !", 200, res);
 
-})
+});
 
 
 export const login = catchAsyncErrors(async (req, res, next) => {
@@ -56,7 +56,7 @@ export const addNewAdmin = catchAsyncErrors(async (req, res, next) => {
         success: true,
         message: "New Admin Registered!"
     })
-})
+});
 
 
 export const getAllDoctors = catchAsyncErrors(async (req, res, next) => {
